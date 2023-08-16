@@ -18,5 +18,6 @@ export class BlablaComponent implements OnInit {
     // .subscribe((incomingCategories: Category[]) => {
     //   this.categories = incomingCategories;
     // });
+
   }
 }
