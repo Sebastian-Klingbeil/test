@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlablaComponent } from './blabla/blabla.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlablaComponent,
     CategoriesComponent
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
