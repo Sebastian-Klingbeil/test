@@ -1,9 +1,12 @@
-<select id="categorySelect">
-  <option *ngFor="let category of categories" value="category">{{category.name}}</option>
-</select>
-<select id="difficultySelect">
-  <option value="easy">Easy</option>
-  <option value="medium">Medium</option>
-  <option value="hard">Hard</option>
-</select>
-<button type="button" id="createBtn">Create</button>
+<div>
+  <label for="categorySelect">Select a category:</label>
+  <select id="categorySelect" [(ngModel)]="selectedCategoryId">
+    <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+  </select>
+  <label for="difficultySelect">Select difficulty:</label>
+  <select id="difficultySelect" [(ngModel)]="selectedDifficulty">
+    <option *ngFor="let levelOfDifficulty of levelsOfDifficulty" [ngValue]="levelOfDifficulty">{{ levelOfDifficulty }}</option>
+  </select>
+  <button type="button" id="createBtn" (click)="onCreate()">Create</button>
+</div>
+<app-questions></app-questions>

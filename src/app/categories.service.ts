@@ -11,8 +11,8 @@ export class CategoriesService {
   constructor(private http: HttpClient) {}
 
   getAllCategories() {
-    return this.http.get<RootObject>(this.categoryUrl).pipe(
-      map((response) => response));
+    return this.http.get<CategoryRootObject>(this.categoryUrl).pipe(
+      map(response => response));
   }
 }
 export interface Trivia_category {
@@ -20,6 +20,6 @@ export interface Trivia_category {
 	name: string;
 }
 
-export interface RootObject {
+export interface CategoryRootObject {
 	trivia_categories: Trivia_category[];
 }
