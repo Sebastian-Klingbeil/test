@@ -20,14 +20,10 @@ export class CategoriesComponent implements OnInit {
     private categoriesService: CategoriesService,
     private questionsService: QuestionsService) {}
 
-  async ngOnInit(): Promise<void> {
-    try {
+  ngOnInit(): void {
       this.categoriesService.getAllCategories().subscribe((incomingCategories: CategoryRootObject) => {
           this.categories = incomingCategories.trivia_categories;
       });
-    } catch(error) {
-      console.log('Error fetching categories', error);
-    }
   }
 
   onCreate(): void {

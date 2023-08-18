@@ -8,7 +8,16 @@ import { Result } from '../questions.service';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent {
-  questions: Result[] = [];
+  selectedAnswers: { [questionId: number]: string } = {};
+
 
   constructor(public questionsService: QuestionsService) {}
+
+  onSelectAnswer(question: Result, selectedAnswer: string): void {
+    this.selectedAnswers[question.id] = selectedAnswer;
+  }
+
+  isAnswerCorrect(question: Result): boolean {
+    return this.selectedAnswers[question.id] === question.correct_answer;
+  }
 }

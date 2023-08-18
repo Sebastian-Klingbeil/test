@@ -2,8 +2,13 @@
   <div class="question">
     <p>Frage: {{ question.question }}</p>
 
-    <div >
-      <button type="button" ></button>
+    <div>
+      <button
+        *ngFor="let answer of question.allAnswers"
+        type="button"
+        (click)="onSelectAnswer(question, answer)">
+        {{ answer }}
+      </button>
     </div>
   </div>
 </div>
